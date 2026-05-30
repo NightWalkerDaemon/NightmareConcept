@@ -1,5 +1,5 @@
 baseURL = "/"
-languageCode = "en-gb"
+locale = "en-GB"
 title = "Nightmare Concept"
 
 # Holly's bio/desc surfaces in the page <head> and home intro
