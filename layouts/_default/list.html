@@ -1,0 +1,38 @@
+{{ define "main" }}
+<section class="gallery">
+  <header class="gallery-head">
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}<div class="gallery-desc">{{ . }}</div>{{ end }}
+  </header>
+
+  {{ $images := .Resources.ByType "image" }}
+  {{ with $images }}
+  <div class="grid">
+    {{ range . }}
+      {{ $thumb := .Resize "600x webp q82" }}
+      {{ $full := .Resize "1800x webp q82" }}
+      {{ $caption := partial "humanize-name.html" .Name }}
+      <figure class="tile">
+        <a href="{{ $full.RelPermalink }}" data-lightbox data-caption="{{ $caption }}">
+          <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" loading="lazy" alt="{{ $caption }}">
+        </a>
+      </figure>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ with .Sections.ByWeight }}
+  <div class="subgalleries">
+    <div class="grid">
+      {{ range . }}
+        {{ $cover := index (.Resources.ByType "image") 0 }}
+        <a class="subgallery" href="{{ .RelPermalink }}">
+          {{ with $cover }}{{ $c := .Resize "600x webp q82" }}<img src="{{ $c.RelPermalink }}" loading="lazy" alt="{{ $.Title }}">{{ end }}
+          <span>{{ .Title }}</span>
+        </a>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+</section>
+{{ end }}
