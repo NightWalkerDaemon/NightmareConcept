@@ -7,8 +7,9 @@
   <div class="grid">
     {{ range .Site.Home.Sections.ByWeight }}
       {{ $cover := index (.Resources.ByType "image") 0 }}
+      {{ $label := .Title }}
       <a class="tile" href="{{ .RelPermalink }}">
-        {{ with $cover }}{{ $c := .Resize "800x webp q82" }}<img src="{{ $c.RelPermalink }}" loading="lazy" alt="{{ $.Title }}">{{ end }}
+        {{ with $cover }}{{ $c := .Resize "800x webp q82" }}<img src="{{ $c.RelPermalink }}" loading="lazy" alt="{{ $label }}">{{ end }}
         <span class="tile-label">{{ .Title }}</span>
       </a>
     {{ end }}
