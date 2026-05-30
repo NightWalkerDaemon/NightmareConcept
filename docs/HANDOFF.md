@@ -39,3 +39,17 @@ Steps to move this from Richard's build to Holly's owned, live site.
 ## 6. AI helper
 - [ ] Set up the local model on the sim rig (Ollama + a friendly UI such as Open
       WebUI), loaded with `assistant/site-assistant-prompt.md` as its system prompt.
+
+## 7. Optional future polish (not needed for launch)
+These were noted during the build review and deliberately deferred — pick them up
+during the design pass if wanted:
+- **Full-resolution originals are downloadable.** Hugo serves the gallery on
+  resized WebP, but the original uploaded file is also copied to the published
+  site (e.g. `/01-creatures/the-hollow.jpg`). If Holly wants to protect her
+  full-res art, we can stop publishing the originals (serve only the processed
+  versions). Worth deciding before lots of real work goes up.
+- **Visible captions under thumbnails.** Captions currently show only in the
+  lightbox. A `<figcaption>` could show them in the grid if she prefers.
+- **Pin the GitHub Action to a commit SHA** (`peaceiris/actions-hugo`) instead of
+  `@v3`, per GitHub's supply-chain guidance. Low risk; trades auto-updates for
+  pinning.
