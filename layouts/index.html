@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section class="home">
+  <header class="gallery-head">
+    <h1>{{ .Site.Title }}</h1>
+    {{ with .Content }}<div class="gallery-desc">{{ . }}</div>{{ end }}
+  </header>
+  <div class="grid">
+    {{ range .Site.Home.Sections.ByWeight }}
+      {{ $cover := index (.Resources.ByType "image") 0 }}
+      <a class="tile" href="{{ .RelPermalink }}">
+        {{ with $cover }}{{ $c := .Resize "800x webp q82" }}<img src="{{ $c.RelPermalink }}" loading="lazy" alt="{{ $.Title }}">{{ end }}
+        <span class="tile-label">{{ .Title }}</span>
+      </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
