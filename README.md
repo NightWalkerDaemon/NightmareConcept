@@ -4,7 +4,9 @@ A folder-driven Hugo portfolio site. Make folders, drop in images, and the site
 builds its own galleries and navigation. Big images are resized automatically.
 
 ## For Holly
-Start here: [`docs/holly/01-getting-started.md`](docs/holly/01-getting-started.md).
+Start here: [`docs/holly/00-start-here.md`](docs/holly/00-start-here.md) — the full
+walkthrough from setup to daily use. The other guides in `docs/holly/` go deeper on
+specific tasks.
 
 ## For developers
 - Local preview: `bash scripts/dev.sh` (needs Hugo **extended**).
