@@ -1,7 +1,5 @@
 # Your Art Website — A Guide From Dad 🎨
 
-Hi love,
-
 I've built you a website for your concept art. The whole point is that **it's yours** — you run it, you own it, and you never have to touch any code. You make folders and drop your pictures in; the website does the rest.
 
 I've written this so you can follow it start to finish. Where something is fiddly and technical, I've marked it **(leave this to me)** — that's my job, just give me a shout. Everything marked **(your bit)** is yours, and it's all clicking buttons.
