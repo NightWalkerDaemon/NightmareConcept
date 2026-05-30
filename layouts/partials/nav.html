@@ -1,0 +1,13 @@
+<header class="site-header">
+  <a class="brand" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+  <nav>
+    <ul>
+      {{ range .Site.Home.Sections.ByWeight }}
+        <li><a href="{{ .RelPermalink }}"{{ if or ($.IsDescendant .) (eq $ .) }} class="active"{{ end }}>{{ .Title }}</a></li>
+      {{ end }}
+      {{ with .Site.GetPage "/about" }}
+        <li><a href="{{ .RelPermalink }}"{{ if eq $ . }} class="active"{{ end }}>{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+</header>

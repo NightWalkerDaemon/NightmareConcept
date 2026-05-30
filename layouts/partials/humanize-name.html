@@ -1,0 +1,5 @@
+{{- $n := path.Base . -}}
+{{- $n = replaceRE `\.[^.]+$` "" $n -}}
+{{- $n = replaceRE `^[0-9]+[-_]?` "" $n -}}
+{{- $n = replaceRE `[-_]+` " " $n -}}
+{{- strings.Title (strings.TrimSpace $n) -}}
