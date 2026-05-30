@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Locale | default "en" }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  {{ partial "nav.html" . }}
+  <main class="site-main">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+  {{ with resources.Get "js/lightbox.js" }}
+    {{ if .Content }}
+      {{ $js := . | resources.Minify | resources.Fingerprint }}
+      <script src="{{ $js.RelPermalink }}" defer></script>
+    {{ end }}
+  {{ end }}
+</body>
+</html>

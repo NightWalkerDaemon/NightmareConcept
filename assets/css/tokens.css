@@ -1,0 +1,31 @@
+/* =========================================================================
+   THEME TOKENS — this file controls the entire LOOK & FEEL of the site.
+   This is YOURS to change, Holly. You can edit every value here without
+   touching any other file. Change a value, save, and the whole site updates.
+
+   Tip: ask your AI helper "change the background to deep charcoal and the
+   accent to blood red" and it will edit the values below.
+   ========================================================================= */
+:root {
+  /* ---- Colours ---- */
+  --color-bg:        #0e0e10;   /* page background */
+  --color-surface:   #17171b;   /* cards / tiles background */
+  --color-text:      #e8e8ea;   /* main text */
+  --color-muted:     #9a9aa2;   /* secondary text, captions */
+  --color-accent:    #c7402f;   /* links, highlights */
+  --color-border:    #2a2a30;   /* hairlines, dividers */
+
+  /* ---- Typography ---- */
+  --font-body:    Georgia, "Times New Roman", serif;
+  --font-heading: Georgia, "Times New Roman", serif;
+  --font-size:    18px;
+  --line-height:  1.6;
+  --tracking-heading: 0.02em; /* letter-spacing for headings */
+
+  /* ---- Layout ---- */
+  --max-width:    1200px;  /* content width */
+  --gap:          16px;    /* gallery grid gap */
+  --tile-min:     260px;   /* min gallery tile width before wrapping */
+  --radius:       2px;     /* corner rounding */
+  --page-pad:     24px;    /* outer page padding */
+}

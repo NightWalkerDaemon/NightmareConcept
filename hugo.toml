@@ -1,0 +1,22 @@
+baseURL = "/"
+locale = "en-GB"
+title = "Nightmare Concept"
+
+# Requires Hugo extended (WebP image processing) >= 0.158 (uses `locale`)
+minVersion = "0.158.0"
+
+# Holly has no use for tags/categories — skip the empty taxonomy pages
+disableKinds = ["taxonomy", "term"]
+
+# Holly's bio/desc surfaces in the page <head> and home intro
+[params]
+description = "Concept art by Holly Warren"
+
+# Default image processing quality for galleries
+[imaging]
+quality = 82
+resampleFilter = "Lanczos"
+
+# Allow raw HTML in Holly's markdown (About page, gallery descriptions)
+[markup.goldmark.renderer]
+unsafe = true

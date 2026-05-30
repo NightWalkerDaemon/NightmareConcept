@@ -1,0 +1,8 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+{{ $tokens := resources.Get "css/tokens.css" }}
+{{ $main := resources.Get "css/main.css" }}
+{{ $css := slice $tokens $main | resources.Concat "css/site.css" | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
