@@ -9,7 +9,11 @@
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
-  {{ $js := resources.Get "js/lightbox.js" | resources.Minify | resources.Fingerprint }}
-  <script src="{{ $js.RelPermalink }}" defer></script>
+  {{ with resources.Get "js/lightbox.js" }}
+    {{ if .Content }}
+      {{ $js := . | resources.Minify | resources.Fingerprint }}
+      <script src="{{ $js.RelPermalink }}" defer></script>
+    {{ end }}
+  {{ end }}
 </body>
 </html>
