@@ -23,13 +23,16 @@ jobs:
         with:
           hugo-version: '0.162.1'
           extended: true
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
       - name: Generate gallery sections
         run: |
           mkdir -p .gallerybuild
           cp -R content .gallerybuild/content
           bash scripts/build-galleries.sh .gallerybuild/content
       - name: Build with Hugo
-        run: hugo --minify --contentDir .gallerybuild/content
+        run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}" --contentDir .gallerybuild/content
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
