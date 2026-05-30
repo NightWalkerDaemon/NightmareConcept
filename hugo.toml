@@ -1,0 +1,16 @@
+baseURL = "/"
+languageCode = "en-gb"
+title = "Nightmare Concept"
+
+# Holly's bio/desc surfaces in the page <head> and home intro
+[params]
+description = "Concept art by Holly Warren"
+
+# Default image processing quality for galleries
+[imaging]
+quality = 82
+resampleFilter = "Lanczos"
+
+# Allow raw HTML in Holly's markdown (About page, gallery descriptions)
+[markup.goldmark.renderer]
+unsafe = true
