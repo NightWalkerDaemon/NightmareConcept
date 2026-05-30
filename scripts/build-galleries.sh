@@ -23,9 +23,12 @@ find "$ROOT" -mindepth 1 -type d | while read -r dir; do
     | sed -E 's/^[0-9]+[-_]?//; s/[-_]+/ /g' \
     | awk '{for(i=1;i<=NF;i++){$i=toupper(substr($i,1,1)) tolower(substr($i,2))}}1')"
 
+  # Escape double-quotes so a folder name like  "Alien" Concepts  can't break the YAML.
+  title_escaped="${title//\"/\\\"}"
+
   cat > "$dir/_index.md" <<EOF
 ---
-title: "$title"
+title: "$title_escaped"
 weight: $weight
 ---
 EOF
