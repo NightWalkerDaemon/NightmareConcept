@@ -1,6 +1,6 @@
 baseURL = "/"
 locale = "en-GB"
-title = "Nightmare Concept"
+title = "Nightmare Concept Art"
 
 # Requires Hugo extended (WebP image processing) >= 0.158 (uses `locale`)
 minVersion = "0.158.0"
